@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "build": "node_modules/.bin/esbuild src/app.js --bundle --outfile=dist/bundle.js --platform=node --format=cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "nitish.dev",

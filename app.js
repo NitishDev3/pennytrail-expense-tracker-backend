@@ -9,7 +9,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin:[ "http://localhost:5173", "https://pennytrail.vercel.app"],
     credentials: true,
 }));
 app.use(express.json());
@@ -23,9 +23,9 @@ app.use("/user", userRouter);
 app.use("/expense", expenseRouter);
 
 
-// app.use("/", async (req, res) => {
-//     res.json({ message: "Welcome to Penny Trail API" })
-// })
+app.use("/", async (req, res) => {
+    res.json({ message: "Welcome to Penny Trail" })
+})
 
 
 
